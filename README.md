@@ -3,3 +3,5 @@ This is the updated trainer of CSGO V1.6. This mini trainer allows you to get un
 
 IMPORTANT
 I have given 2 types of files. For programmers, you can directly access the .py (python) file and run it on your pc. For others, you can use the zip file. THANK YOU!
+
+Unfortunately, this only works for the CSGO downloaded from down-cs.su
