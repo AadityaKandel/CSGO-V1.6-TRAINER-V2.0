@@ -24,6 +24,8 @@ info='''CSGO V1.6 TRAINER
 base_address=0x14830000+0x8439E0
 game=None
 health_detect=False
+health_offset = [0x7C, 0x4, 0x320, 0x20, 0x4, 0x4, 0x160]
+money_offset = [0x7C, 0x4, 0x320, 0x20, 0x4, 0x1CC]
 # Float 100 = 1120403456
 
 def find_process():
@@ -49,15 +51,15 @@ def modify_health():
 			while True:
 				if keyboard.is_pressed("f7"):
 					time.sleep(0.5)
-					health_pointer = game.get_pointer(base_address, offsets=[0x7C, 0x4, 0x320, 0x20, 0x4, 0x4, 0x160])
+					health_pointer = game.get_pointer(base_address, offsets=health_offset)
 					game.write(health_pointer, 1120403456)
-					money_pointer = game.get_pointer(base_address, offsets=[0x7C, 0x4, 0x320, 0x20, 0x4, 0x1CC])
+					money_pointer = game.get_pointer(base_address, offsets=money_offset)
 					game.write(money_pointer, 1000)
 					l2.config(fg="white")
 					break
-				health_pointer = game.get_pointer(base_address, offsets=[0x7C, 0x4, 0x320, 0x20, 0x4, 0x4, 0x160])
+				health_pointer = game.get_pointer(base_address, offsets=health_offset)
 				game.write(health_pointer, 1232348160)
-				money_pointer = game.get_pointer(base_address, offsets=[0x7C, 0x4, 0x320, 0x20, 0x4, 0x1CC])
+				money_pointer = game.get_pointer(base_address, offsets=money_offset)
 				game.write(money_pointer, 1000000)
 				l2.config(fg="green")
 
