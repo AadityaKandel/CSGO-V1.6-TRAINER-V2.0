@@ -26,6 +26,10 @@ game=None
 health_detect=False
 health_offset = [0x7C, 0x4, 0x320, 0x20, 0x4, 0x4, 0x160]
 money_offset = [0x7C, 0x4, 0x320, 0x20, 0x4, 0x1CC]
+initial_health = 1120403456
+final_health = 1232348160
+initial_money = 1000
+final_money = 1000000
 # Float 100 = 1120403456
 
 def find_process():
@@ -52,15 +56,15 @@ def modify_health():
 				if keyboard.is_pressed("f7"):
 					time.sleep(0.5)
 					health_pointer = game.get_pointer(base_address, offsets=health_offset)
-					game.write(health_pointer, 1120403456)
+					game.write(health_pointer, initial_health)
 					money_pointer = game.get_pointer(base_address, offsets=money_offset)
-					game.write(money_pointer, 1000)
+					game.write(money_pointer, initial_money)
 					l2.config(fg="white")
 					break
 				health_pointer = game.get_pointer(base_address, offsets=health_offset)
-				game.write(health_pointer, 1232348160)
+				game.write(health_pointer, final_health)
 				money_pointer = game.get_pointer(base_address, offsets=money_offset)
-				game.write(money_pointer, 1000000)
+				game.write(money_pointer, final_money)
 				l2.config(fg="green")
 
 # I am LAZY ASF!!! THAT'S WHY I DIDN'T ADD THESE TWO ACTIVATE & DEACTIVATE IN SEPARATE FUNCTIONS> JUST RE-DID THAT $HIT
