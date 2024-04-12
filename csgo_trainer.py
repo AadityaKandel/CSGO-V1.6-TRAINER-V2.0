@@ -68,7 +68,6 @@ def modify_health():
 				l2.config(fg="green")
 
 # I am LAZY ASF!!! THAT'S WHY I DIDN'T ADD THESE TWO ACTIVATE & DEACTIVATE IN SEPARATE FUNCTIONS> JUST RE-DID THAT $HIT
-# WARNING! THIS BELONGS TO AADITYA KANDEL ONLY!!
 
 rm = ReadWriteMemory()
 
